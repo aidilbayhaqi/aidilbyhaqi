@@ -1,0 +1,74 @@
+@import 'tailwindcss';
+
+body {
+  @apply bg-gray-900 text-white;
+}
+
+/* === Default state sebelum muncul === */
+
+.reveal {
+    opacity: 0;
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+
+/* === Initial states === */
+
+.reveal[data-reveal="up"] {
+    transform: translateY(40px);
+}
+
+.reveal[data-reveal="down"] {
+    transform: translateY(-40px);
+}
+
+.reveal[data-reveal="left"] {
+    transform: translateX(-40px);
+}
+
+.reveal[data-reveal="right"] {
+    transform: translateX(40px);
+}
+
+.reveal[data-reveal="fade"] {
+    transform: translateY(0);
+}
+
+
+/* === Active states === */
+
+.reveal.active {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+
+/* Gerakan float naik-turun */
+
+@keyframes floatDownUp {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(15px);
+        /* turun */
+    }
+    100% {
+        transform: translateY(0);
+        /* balik naik */
+    }
+}
+
+
+/* Fast floating */
+
+.animate-float-fast {
+    animation: floatDownUp 2.2s ease-in-out infinite;
+}
+
+
+/* Slow floating */
+
+.animate-float-slow {
+    animation: floatDownUp 4.5s ease-in-out infinite;
+}
