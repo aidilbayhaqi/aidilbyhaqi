@@ -1,27 +1,24 @@
-import React, { useState } from 'react';
-import useInView from '../hooks/useInView';
+import { useRef } from "react";
+import useInView from "../hooks/useInView";
 
-const FadeIn = ({ children, delay = 0, direction = 'up', className = '' }) => {
-  const [ref, setRef] = useState(null);
-  const isInView = useInView({ current: ref }, { threshold: 0.1 });
+const FadeIn = ({ children, delay = 0, direction = "up", className = "" }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { threshold: 0.08, rootMargin: "0px 0px -40px" });
 
-  const getTransform = () => {
-    switch (direction) {
-      case 'up': return 'translateY(20px)';
-      case 'down': return 'translateY(-20px)';
-      case 'left': return 'translateX(20px)';
-      case 'right': return 'translateX(-20px)';
-      default: return 'translateY(20px)';
-    }
+  const transforms = {
+    up: "translateY(24px)",
+    down: "translateY(-24px)",
+    left: "translateX(24px)",
+    right: "translateX(-24px)",
   };
 
   return (
     <div
-      ref={setRef}
-      className={`transition-all duration-700 ${className}`}
+      ref={ref}
+      className={`transition-all duration-700 motion-reduce:transform-none motion-reduce:transition-none ${className}`}
       style={{
         opacity: isInView ? 1 : 0,
-        transform: isInView ? 'translate(0)' : getTransform(),
+        transform: isInView ? "translate(0)" : transforms[direction] || transforms.up,
         transitionDelay: `${delay}ms`,
       }}
     >

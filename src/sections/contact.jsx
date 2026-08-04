@@ -1,100 +1,103 @@
-import React from "react";
-import { Mail, MapPin } from "lucide-react";
-import { FaWhatsapp, FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa";
+import { useState } from "react";
+import {
+  ArrowUpRight,
+  Download,
+  Github,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Music2,
+  Phone,
+} from "lucide-react";
+import FadeIn from "../components/fadeIn";
+import { socialLinks } from "../data/portfolioData";
+import { useLanguage } from "../i18n/LanguageContext";
+
+const iconMap = { Github, Instagram, Linkedin, Music2 };
 
 const Contact = () => {
-  const socials = [
-    {
-      name: "WhatsApp",
-      link: "https://wa.me/6289504322572",
-      icon: <FaWhatsapp />,
-      color: "hover:text-green-500",
-    },
-    {
-      name: "Instagram",
-      link: "https://instagram.com/aidilbyhaqi._",
-      icon: <FaInstagram />,
-      color: "hover:text-pink-500",
-    },
-    {
-      name: "TikTok",
-      link: "https://tiktok.com/@ellmauturu",
-      icon: <FaTiktok />,
-      color: "hover:text-white",
-    },
-    {
-      name: "LinkedIn",
-      link: "https://linkedin.com/in/aidil-bayhaqi",
-      icon: <FaLinkedin />,
-      color: "hover:text-blue-500",
-    },
-  ];
+  const { t } = useLanguage();
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const updateField = (event) => setForm((current) => ({ ...current, [event.target.name]: event.target.value }));
+
+  const sendToWhatsApp = (event) => {
+    event.preventDefault();
+    const text = [
+      t("whatsappGreeting"),
+      `${t("whatsappName")}: ${form.name}`,
+      `${t("email")}: ${form.email}`,
+      `${t("whatsappProject")}: ${form.message}`,
+    ].join("\n");
+    window.open(`https://wa.me/6289504322572?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
+  };
 
   return (
-    <section id="contact" className="py-24 bg-gray-900/50">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-
-        {/* HEADER */}
-          <span className="text-purple-500 text-sm uppercase tracking-wider">
-            Contact
-          </span>
-
-          <h2 className="text-4xl font-bold mt-3 mb-6">
-            Let’s Build Something Great Together 🚀
-          </h2>
-
-          <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Have a project in mind or just want to connect?  
-            Feel free to reach out through any platform below — I’m always open
-            to discussing new ideas, collaborations, or opportunities.
-          </p>
-
-        {/* SOCIAL BUTTONS */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-          {socials.map((item, i) => (
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`group flex flex-col items-center justify-center p-8 rounded-2xl 
-                bg-black/40 border border-white/10 backdrop-blur-md
-                hover:-translate-y-3 hover:border-purple-500/40
-                hover:shadow-[0_0_30px_rgba(168,85,247,0.25)]
-                transition-all duration-300`}
-              >
-                {/* Glow */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
-
-                {/* Icon */}
-                <div
-                  className={`text-4xl text-gray-300 mb-3 transition-all duration-300 group-hover:scale-125 ${item.color}`}
-                >
-                  {item.icon}
-                </div>
-
-                {/* Label */}
-                <span className="text-sm text-gray-300 group-hover:text-white transition">
-                  {item.name}
-                </span>
-              </a>
-          ))}
-        </div>
-
-        {/* EXTRA INFO */}
-       
-          <div className="mt-16 flex flex-col items-center gap-3 text-gray-400 text-sm">
-            <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-purple-500" />
-              <span>m.aidilbayhaqi@gmail.com</span>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-red-500" />
-              <span>Jakarta, Indonesia</span>
-            </div>
+    <section id="contact" className="section-space contact-section">
+      <div className="container-shell">
+        <FadeIn>
+          <div className="contact-marquee" aria-hidden="true">
+            <span>{t("contactMarquee")}</span>
+            <span>{t("contactMarquee")}</span>
           </div>
+        </FadeIn>
 
+        <div className="contact-layout">
+          <FadeIn>
+            <div className="contact-copy">
+              <span className="section-index">{t("contactIndex")}</span>
+              <h2>{t("contactTitle")}</h2>
+              <p>{t("contactDescription")}</p>
 
+              <div className="contact-direct-list">
+                <a href="mailto:m.aidilbayhaqi@gmail.com"><Mail size={18} /><span><small>{t("email")}</small>m.aidilbayhaqi@gmail.com</span><ArrowUpRight size={16} /></a>
+                <a href="https://wa.me/6289504322572" target="_blank" rel="noopener noreferrer"><Phone size={18} /><span><small>{t("whatsapp")}</small>+62 895-0432-2572</span><ArrowUpRight size={16} /></a>
+                <div><MapPin size={18} /><span><small>{t("locationLabel")}</small>{t("locationValue")}</span></div>
+              </div>
+
+              <div className="contact-socials" aria-label="Social media">
+                {socialLinks.map((social) => {
+                  const Icon = iconMap[social.icon];
+                  if (!social.available || !social.url) {
+                    return (
+                      <button key={social.name} type="button" className="social-disabled" aria-disabled="true" title={t("socialUnavailable")}>
+                        <Icon size={17} /> {social.name}
+                      </button>
+                    );
+                  }
+                  return (
+                    <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer">
+                      <Icon size={17} /> {social.name} <ArrowUpRight size={14} />
+                    </a>
+                  );
+                })}
+                <a href="/aidil-bayhaqi-cv.pdf" target="_blank" rel="noopener noreferrer">
+                  <Download size={17} /> CV <ArrowUpRight size={14} />
+                </a>
+              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={120}>
+            <form onSubmit={sendToWhatsApp} className="contact-form">
+              <div className="contact-form-heading"><span>{t("quickNote")}</span><small>{t("whatsappSecure")}</small></div>
+              <label>
+                <span>{t("yourName")}</span>
+                <input type="text" name="name" value={form.name} onChange={updateField} required placeholder={t("namePlaceholder")} />
+              </label>
+              <label>
+                <span>{t("email")}</span>
+                <input type="email" name="email" value={form.email} onChange={updateField} required placeholder="you@example.com" />
+              </label>
+              <label>
+                <span>{t("improveQuestion")}</span>
+                <textarea name="message" value={form.message} onChange={updateField} rows={6} required placeholder={t("messagePlaceholder")} />
+              </label>
+              <button type="submit">{t("sendNote")} <MessageCircle size={18} /></button>
+            </form>
+          </FadeIn>
+        </div>
       </div>
     </section>
   );

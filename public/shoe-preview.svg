@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#18131f"/><stop offset="1" stop-color="#08080c"/></linearGradient><linearGradient id="p" x1="0" x2="1"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs>
+<rect width="1600" height="1000" fill="url(#g)"/>
+<circle cx="1280" cy="120" r="260" fill="#7c3aed" opacity=".13"/>
+<rect x="95" y="70" width="1410" height="860" rx="36" fill="#0e0e14" stroke="#ffffff" stroke-opacity=".12"/>
+<rect x="95" y="70" width="1410" height="86" rx="36" fill="#17171f"/>
+<circle cx="142" cy="113" r="10" fill="#ef4444"/><circle cx="174" cy="113" r="10" fill="#f59e0b"/><circle cx="206" cy="113" r="10" fill="#22c55e"/>
+<text x="260" y="123" fill="#f3e8ff" font-family="Arial, sans-serif" font-size="28" font-weight="700">SOLESPACE</text>
+<rect x="130" y="190" width="250" height="700" rx="24" fill="#13131a" stroke="#ffffff" stroke-opacity=".06"/>
+<rect x="165" y="235" width="175" height="45" rx="14" fill="url(#p)" opacity=".9"/>
+<text x="188" y="265" fill="white" font-family="Arial, sans-serif" font-size="19">Overview</text>
+<g fill="#9ca3af" font-family="Arial, sans-serif" font-size="19"><text x="170" y="340">Catalog</text><text x="170" y="405">Checkout</text><text x="170" y="470">Orders</text><text x="170" y="535">Analytics</text><text x="170" y="600">Settings</text></g>
+<text x="430" y="240" fill="#fff" font-family="Arial, sans-serif" font-size="42" font-weight="700">Modern shoe commerce</text>
+<text x="430" y="282" fill="#7d8597" font-family="Arial, sans-serif" font-size="20">Readable operations in one connected workspace.</text>
+<g>
+<rect x="430" y="330" width="300" height="150" rx="24" fill="#15151d" stroke="#ffffff" stroke-opacity=".08"/><text x="460" y="375" fill="#9ca3af" font-family="Arial" font-size="18">Catalog</text><text x="460" y="435" fill="#fff" font-family="Arial" font-size="42" font-weight="700">1,248</text>
+<rect x="755" y="330" width="300" height="150" rx="24" fill="#15151d" stroke="#ffffff" stroke-opacity=".08"/><text x="785" y="375" fill="#9ca3af" font-family="Arial" font-size="18">Checkout</text><text x="785" y="435" fill="#fff" font-family="Arial" font-size="42" font-weight="700">86%</text>
+<rect x="1080" y="330" width="360" height="150" rx="24" fill="#15151d" stroke="#ffffff" stroke-opacity=".08"/><text x="1110" y="375" fill="#9ca3af" font-family="Arial" font-size="18">Orders</text><text x="1110" y="435" fill="#c084fc" font-family="Arial" font-size="42" font-weight="700">+24.8%</text>
+</g>
+<rect x="430" y="515" width="650" height="335" rx="28" fill="#15151d" stroke="#ffffff" stroke-opacity=".08"/>
+<text x="465" y="565" fill="#fff" font-family="Arial" font-size="24" font-weight="700">Performance overview</text>
+<polyline points="470,790 560,730 650,748 740,650 830,680 930,590 1035,615" fill="none" stroke="url(#p)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="470" y1="790" x2="1035" y2="790" stroke="#fff" stroke-opacity=".08"/><line x1="470" y1="690" x2="1035" y2="690" stroke="#fff" stroke-opacity=".06"/><line x1="470" y1="590" x2="1035" y2="590" stroke="#fff" stroke-opacity=".06"/>
+<rect x="1110" y="515" width="330" height="335" rx="28" fill="#15151d" stroke="#ffffff" stroke-opacity=".08"/>
+<text x="1142" y="565" fill="#fff" font-family="Arial" font-size="24" font-weight="700">Recent activity</text>
+<g fill="#23232f"><rect x="1142" y="605" width="266" height="52" rx="14"/><rect x="1142" y="677" width="266" height="52" rx="14"/><rect x="1142" y="749" width="266" height="52" rx="14"/></g>
+</svg>

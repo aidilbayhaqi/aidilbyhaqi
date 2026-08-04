@@ -1,0 +1,86 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#171126"/>
+      <stop offset="1" stop-color="#08080D"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#C084FC"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="44" fill="url(#bg)"/>
+  <circle cx="1290" cy="90" r="300" fill="#7C3AED" fill-opacity="0.12"/>
+  <circle cx="400" cy="880" r="260" fill="#A855F7" fill-opacity="0.08"/>
+  <g>
+    <rect x="90" y="72" width="1420" height="756" rx="30" fill="#0B0B11" stroke="#FFFFFF" stroke-opacity="0.12"/>
+    <rect x="90" y="72" width="264" height="756" rx="30" fill="#101017"/>
+    <rect x="116" y="102" width="212" height="56" rx="16" fill="#A855F7" fill-opacity="0.12"/>
+    <circle cx="147" cy="130" r="14" fill="url(#accent)"/>
+    <text x="174" y="138" fill="#F4E8FF" font-family="Arial, sans-serif" font-size="26" font-weight="700">DashAI</text>
+    <text x="118" y="205" fill="#6B7280" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2">WORKSPACE</text>
+    <g fill="#A1A1AA" font-family="Arial, sans-serif" font-size="18">
+      <text x="154" y="258">Overview</text>
+      <text x="154" y="314">Products</text>
+      <text x="154" y="370">Sales Automation</text>
+      <text x="154" y="426">Finance</text>
+      <text x="154" y="482">Human Resources</text>
+      <text x="154" y="538">CRM</text>
+      <text x="154" y="594">AI Report</text>
+    </g>
+    <g fill="#7C3AED">
+      <circle cx="128" cy="252" r="6"/><circle cx="128" cy="308" r="6"/><circle cx="128" cy="364" r="6"/>
+      <circle cx="128" cy="420" r="6"/><circle cx="128" cy="476" r="6"/><circle cx="128" cy="532" r="6"/>
+    </g>
+    <rect x="112" y="560" width="220" height="64" rx="16" fill="#7C3AED" fill-opacity="0.16" stroke="#A855F7" stroke-opacity="0.25"/>
+    <circle cx="128" cy="588" r="7" fill="#C084FC"/>
+    <text x="154" y="596" fill="#E9D5FF" font-family="Arial, sans-serif" font-size="18">AI Report</text>
+
+    <text x="402" y="132" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="30" font-weight="700">Business Overview</text>
+    <text x="402" y="161" fill="#71717A" font-family="Arial, sans-serif" font-size="16">Monitor operations, revenue, automation, and AI insight.</text>
+    <rect x="1288" y="106" width="166" height="48" rx="14" fill="#A855F7"/>
+    <text x="1320" y="137" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="700">Generate report</text>
+
+    <g>
+      <rect x="402" y="202" width="236" height="142" rx="22" fill="#14141D" stroke="#FFFFFF" stroke-opacity="0.09"/>
+      <text x="426" y="237" fill="#71717A" font-family="Arial, sans-serif" font-size="15">TOTAL REVENUE</text>
+      <text x="426" y="286" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="32" font-weight="700">Rp 284.5M</text>
+      <text x="426" y="316" fill="#4ADE80" font-family="Arial, sans-serif" font-size="15">↗ 18.4% this month</text>
+
+      <rect x="660" y="202" width="236" height="142" rx="22" fill="#14141D" stroke="#FFFFFF" stroke-opacity="0.09"/>
+      <text x="684" y="237" fill="#71717A" font-family="Arial, sans-serif" font-size="15">AUTOMATIONS</text>
+      <text x="684" y="286" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="32" font-weight="700">128</text>
+      <text x="684" y="316" fill="#C084FC" font-family="Arial, sans-serif" font-size="15">94% successful</text>
+
+      <rect x="918" y="202" width="236" height="142" rx="22" fill="#14141D" stroke="#FFFFFF" stroke-opacity="0.09"/>
+      <text x="942" y="237" fill="#71717A" font-family="Arial, sans-serif" font-size="15">ACTIVE PRODUCTS</text>
+      <text x="942" y="286" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="32" font-weight="700">482</text>
+      <text x="942" y="316" fill="#60A5FA" font-family="Arial, sans-serif" font-size="15">12 need attention</text>
+
+      <rect x="1176" y="202" width="278" height="142" rx="22" fill="url(#accent)" fill-opacity="0.18" stroke="#C084FC" stroke-opacity="0.32"/>
+      <text x="1200" y="237" fill="#D8B4FE" font-family="Arial, sans-serif" font-size="15">AI INSIGHT</text>
+      <text x="1200" y="272" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="19" font-weight="700">Cash flow is improving</text>
+      <text x="1200" y="302" fill="#C4B5FD" font-family="Arial, sans-serif" font-size="14">Review 3 overdue invoices</text>
+    </g>
+
+    <rect x="402" y="374" width="672" height="374" rx="24" fill="#12121A" stroke="#FFFFFF" stroke-opacity="0.09"/>
+    <text x="430" y="416" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="20" font-weight="700">Revenue &amp; expenses</text>
+    <text x="430" y="442" fill="#71717A" font-family="Arial, sans-serif" font-size="14">Monthly operational performance</text>
+    <line x1="438" y1="681" x2="1034" y2="681" stroke="#FFFFFF" stroke-opacity="0.08"/>
+    <line x1="438" y1="611" x2="1034" y2="611" stroke="#FFFFFF" stroke-opacity="0.06"/>
+    <line x1="438" y1="541" x2="1034" y2="541" stroke="#FFFFFF" stroke-opacity="0.06"/>
+    <path d="M448 636 C520 615 550 590 612 599 C680 608 703 524 772 548 C844 574 873 480 945 504 C982 516 1003 477 1024 462" stroke="url(#accent)" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <path d="M448 659 C518 650 557 642 612 648 C683 655 715 613 772 624 C844 638 883 596 945 606 C991 614 1006 588 1024 581" stroke="#52525B" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <g fill="#71717A" font-family="Arial, sans-serif" font-size="13">
+      <text x="446" y="712">Jan</text><text x="560" y="712">Mar</text><text x="680" y="712">May</text><text x="804" y="712">Jul</text><text x="920" y="712">Sep</text><text x="1010" y="712">Nov</text>
+    </g>
+
+    <rect x="1102" y="374" width="352" height="374" rx="24" fill="#12121A" stroke="#FFFFFF" stroke-opacity="0.09"/>
+    <text x="1130" y="416" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="20" font-weight="700">Recent activity</text>
+    <g font-family="Arial, sans-serif">
+      <circle cx="1148" cy="477" r="14" fill="#A855F7" fill-opacity="0.22"/><text x="1178" y="475" fill="#F4F4F5" font-size="15">Invoice marked as paid</text><text x="1178" y="498" fill="#71717A" font-size="13">Finance · 2 min ago</text>
+      <circle cx="1148" cy="559" r="14" fill="#60A5FA" fill-opacity="0.22"/><text x="1178" y="557" fill="#F4F4F5" font-size="15">Sales order automated</text><text x="1178" y="580" fill="#71717A" font-size="13">Sales · 18 min ago</text>
+      <circle cx="1148" cy="641" r="14" fill="#4ADE80" fill-opacity="0.22"/><text x="1178" y="639" fill="#F4F4F5" font-size="15">Monthly report generated</text><text x="1178" y="662" fill="#71717A" font-size="13">AI Agent · 1 hour ago</text>
+    </g>
+  </g>
+</svg>

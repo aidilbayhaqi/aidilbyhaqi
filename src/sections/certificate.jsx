@@ -1,106 +1,88 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import { useEffect, useState } from "react";
+import { Award, ArrowUpRight, X } from "lucide-react";
+import FadeIn from "../components/fadeIn";
+import { certificates } from "../data/portfolioData";
+import { useLanguage } from "../i18n/LanguageContext";
 
+const CertificateModal = ({ certificate, onClose }) => {
+  const { t } = useLanguage();
 
-const Certificates = () => {
-  const certificates = [
-    {
-      title: "Certificate Developer by Alibaba Cloud",
-      issuer: "Alibaba Cloud",
-      date: "2024",
-      image: "/SERTIFIKAT-ALIBABA-CLOUD.png", // taruh di public/certificates/
-    },
-    {
-      title: "JavaScript by Dicoding",
-      issuer: "Dicoding",
-      date: "2023",
-      image: "/js.jpg",
-    },
-    {
-      title: "React by Skillvul",
-      issuer: "Skillvul",
-      date: "2023",
-      image: "SKILVUL-REACT.jpg",
-    },
-    {
-      title: "Backend Developer",
-      issuer: "Dicoding",
-      date: "2024",
-      image: "/backend-js.jpg",
-    },
-    {
-      title: "Frontend Developer",
-      issuer: "Dicoding",
-      date: "2024",
-      image: "/frontend.jpg",
-    },
-    {
-      title: "GIT",
-      issuer: "Alibaba Cloud",
-      date: "2024",
-      image: "/git-alibaba.png",
-    },
-    {
-      title: "Serverless Computing",
-      issuer: "Alibaba Cloud",
-      date: "2024",
-      image: "/serverless-computing.png",
-    },
-    {
-      title: "Flutter Developer",
-      issuer: "Dicoding",
-      date: "2024",
-      image: "/flutter-dev.jpg",
-    },
-  ];
+  useEffect(() => {
+    if (!certificate) return undefined;
+    const handleEscape = (event) => event.key === "Escape" && onClose();
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleEscape);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [certificate, onClose]);
+
+  if (!certificate) return null;
 
   return (
-    <section id="certificate" className="py-24 bg-[#121212]">
-
-        <div className="container mx-auto px-6">
-          <div className="max-w-xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Certificates & Achievements
-            </h2>
-            <p className="text-gray-400">
-              A collection of certifications that validate my skills and
-              continuous learning journey.
-            </p>
-          </div>
-
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={30}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 4000 }}
-            breakpoints={{
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-          >
-            {certificates.map((cert, index) => (
-              <SwiperSlide key={index}>
-                <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 shadow-lg hover:border-purple-500/50 transition-all">
-                  <img
-                    src={cert.image}
-                    alt={cert.title}
-                    className="rounded-xl mb-4 w-full h-48 object-cover"
-                  />
-                  <h3 className="text-lg font-semibold">{cert.title}</h3>
-                  <p className="text-gray-400 text-sm">
-                    {cert.issuer} • {cert.date}
-                  </p>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+    <div
+      className="certificate-modal-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${certificate.title} ${t("certificate")}`}
+      onMouseDown={(event) => event.target === event.currentTarget && onClose()}
+    >
+      <div className="certificate-modal-sheet">
+        <button type="button" onClick={onClose} aria-label={t("closeCertificate")}><X size={20} /></button>
+        <div className="certificate-modal-meta">
+          <span>{certificate.issuer}</span>
+          <strong>{certificate.title}</strong>
+          <small>{certificate.date}</small>
         </div>
+        <img src={certificate.image} alt={`${certificate.title} ${t("issuedBy")} ${certificate.issuer}`} />
+      </div>
+    </div>
+  );
+};
+
+const Certificates = () => {
+  const { t } = useLanguage();
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
+
+  return (
+    <section id="certificate" className="section-space learning-section">
+      <div className="container-shell">
+        <FadeIn>
+          <div className="learning-heading">
+            <div>
+              <span className="section-index">{t("learningIndex")}</span>
+              <h2>{t("learningTitle")}</h2>
+            </div>
+            <p>{t("learningDescription")}</p>
+          </div>
+        </FadeIn>
+
+        <div className="certificate-grid">
+          {certificates.map((certificate, index) => (
+            <FadeIn key={`${certificate.issuer}-${certificate.title}`} delay={(index % 4) * 70}>
+              <button
+                type="button"
+                onClick={() => setSelectedCertificate(certificate)}
+                className="certificate-item group"
+                aria-label={`${t("previewCertificate")} ${certificate.title}`}
+              >
+                <div className="certificate-thumb">
+                  <img src={certificate.image} alt={certificate.title} loading="lazy" />
+                  <div><ArrowUpRight size={18} /></div>
+                </div>
+                <div className="certificate-copy">
+                  <Award size={18} />
+                  <div><span>{certificate.issuer} · {certificate.date}</span><h3>{certificate.title}</h3></div>
+                  <small>{String(index + 1).padStart(2, "0")}</small>
+                </div>
+              </button>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+
+      <CertificateModal certificate={selectedCertificate} onClose={() => setSelectedCertificate(null)} />
     </section>
   );
 };
