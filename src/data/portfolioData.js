@@ -623,8 +623,8 @@ export const organizationHighlights = [
 
 export const socialLinks = [
   { name: "LinkedIn", url: "https://www.linkedin.com/in/aidil-bayhaqi/", icon: "Linkedin", available: true },
-  { name: "Instagram", url: "", icon: "Instagram", available: false },
-  { name: "TikTok", url: "", icon: "Music2", available: false },
+  { name: "Instagram", url: "https://www.instagram.com/learnwithells/", icon: "Instagram", available: false },
+  { name: "TikTok", url: "https://www.tiktok.com/@ellmauturu", icon: "Music2", available: false },
   { name: "GitHub", url: "https://github.com/aidilbayhaqi", icon: "Github", available: true },
 ];
 
