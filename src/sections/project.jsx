@@ -10,7 +10,7 @@ import {
   Layers3,
   X,
 } from "lucide-react";
-import FadeIn from "../components/fadeIn";
+import FadeIn from "../components/FadeIn";
 import DevicePreview from "../components/DevicePreview";
 import { githubArchive, projects } from "../data/portfolioData";
 import { useLanguage } from "../i18n/LanguageContext";

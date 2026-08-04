@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight, Check, CheckCircle2, Lightbulb, TriangleAlert } from "lucide-react";
-import FadeIn from "../components/fadeIn";
+import FadeIn from "../components/FadeIn";
 import DevicePreview from "../components/DevicePreview";
 import { useLanguage } from "../i18n/LanguageContext";
 

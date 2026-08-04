@@ -11,7 +11,7 @@ import {
   Music2,
   Phone,
 } from "lucide-react";
-import FadeIn from "../components/fadeIn";
+import FadeIn from "../components/FadeIn";
 import { socialLinks } from "../data/portfolioData";
 import { useLanguage } from "../i18n/LanguageContext";
 

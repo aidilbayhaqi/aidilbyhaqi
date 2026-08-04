@@ -14,7 +14,7 @@ import {
   Sparkles,
   UsersRound,
 } from "lucide-react";
-import FadeIn from "../components/fadeIn";
+import FadeIn from "../components/FadeIn";
 import {
   currentFocus,
   education,

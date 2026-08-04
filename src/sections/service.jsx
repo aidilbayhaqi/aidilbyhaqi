@@ -7,7 +7,7 @@ import {
   Smartphone,
   Workflow,
 } from "lucide-react";
-import FadeIn from "../components/fadeIn";
+import FadeIn from "../components/FadeIn";
 import { services } from "../data/portfolioData";
 import { useLanguage } from "../i18n/LanguageContext";
 

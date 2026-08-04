@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Award, ArrowUpRight, X } from "lucide-react";
-import FadeIn from "../components/fadeIn";
+import FadeIn from "../components/FadeIn";
 import { certificates } from "../data/portfolioData";
 import { useLanguage } from "../i18n/LanguageContext";
 
